@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   devtool: "source-map",
@@ -13,4 +14,11 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    static: "./dist",
+    port: 3001
+  },
+  plugins: [
+    new HtmlWebpackPlugin({template: "./index.html"})
+  ]
 }

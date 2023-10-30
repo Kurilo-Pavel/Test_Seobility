@@ -56,6 +56,7 @@ class Input extends Element {
   };
 
   resetValue() {
+    this.value = "";
     this.input.value = "";
   }
 }

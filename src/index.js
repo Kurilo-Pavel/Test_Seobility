@@ -66,7 +66,6 @@ const sendRequest = async () => {
   const message = userMessage.validation();
   const modalMessage = document.getElementById("modal");
   const fieldMessage = document.querySelector(".modal");
-
   if (name && email && phone && message) {
     const serverRequest = await request({name: name, email: email, phone: phone, message: message});
     if (serverRequest.status === "success") {

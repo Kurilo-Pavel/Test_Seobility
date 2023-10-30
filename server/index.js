@@ -5,7 +5,7 @@ const server = express();
 const port = 9090;
 
 server.options('/*', (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:63342");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Access-Control-Allow-Methods", "GET,DELETE,POST,PUT");
@@ -23,7 +23,7 @@ server.get("/api/ping", (request, response) => {
 
 server.post("/api/registration", (request, response) => {
   // response.setHeader("Access-Control-Allow-Origin", "http://localhost:63342");
-  response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  response.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
   const isName = LOGIN.regx(LOGIN.minSymbols, LOGIN.maxSymbols).test(request.body.name);
   const isEmail = MAIL.regx(MAIL.minSymbols, MAIL.maxSymbols).test(request.body.email);
   const isMessage = MESSAGE.regx(MESSAGE.minSymbols, MESSAGE.maxSymbols).test(request.body.message);
