@@ -1,0 +1,91 @@
+@import "src/constants.module.scss";
+
+.modalInput {
+  display: none;
+}
+
+.modalButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  bottom: 10%;
+  left: 85vw;
+  border-radius: 50%;
+  background: $buttonBackground;
+  color: $buttonColor;
+  box-shadow: 0 5px 10px 0 rgba(101, 90, 106, 14.101961);
+  z-index: 3;
+
+  &::before {
+    content: "Open modal";
+  }
+
+  &:hover {
+    animation: 0.5s linear 0s 1 both hover_button;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+}
+
+@keyframes hover_button {
+  from {
+    background: $buttonBackground;
+    color: $buttonColor;
+  }
+  to {
+    background: $inputBorderBottom;
+    color: $buttonBackground;
+  }
+}
+
+.modalWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: $wrapper;
+  visibility: hidden;
+}
+
+#modal:checked ~ .modalWrapper {
+  animation: 0.5s linear 0s 1 both open_modal;
+}
+
+@keyframes open_modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#modal:checked ~ .modalButton {
+  &::before {
+    content: "Close modal";
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: $buttonColor;
+  width: 30%;
+  height: 30%;
+  font-size: 20px;
+  text-align: center;
+}

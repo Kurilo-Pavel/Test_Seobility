@@ -1,0 +1,34 @@
+@import "src/constants.module.scss";
+
+.button {
+  padding: 20px 140px;
+  width: max-content;
+  background: $buttonBackground;
+  border: none;
+  color: $buttonColor;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px 0 rgba(101, 90, 106, 14.101961);
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+
+  &:hover {
+    animation: 0.5s linear 0s 1 both hover_button;
+  }
+}
+
+
+
+@keyframes hover_button {
+  from {
+    background: $buttonBackground;
+    color: $buttonColor;
+  }
+  to {
+    background: $inputBorderBottom;
+    color: $buttonBackground;
+  }
+}

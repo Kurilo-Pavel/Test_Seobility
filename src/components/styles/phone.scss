@@ -1,0 +1,22 @@
+@import "./src/constants.module.scss";
+
+.selectorFlags {
+  display: flex;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 180px;
+  height: 100%;
+  border: none;
+  border-bottom: 1px solid $inputBorderBottom;
+  font-size: 20px;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.code {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  align-self: center;
+}
